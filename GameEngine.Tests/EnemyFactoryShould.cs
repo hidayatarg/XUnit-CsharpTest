@@ -10,7 +10,7 @@ namespace GameEngine.Tests
         [Fact]
         public void CreateNormalEnemyByDefault()
         {
-            // Assert
+            // Arrange
             EnemyFactory sut = new EnemyFactory();
 
             // Act
@@ -23,7 +23,7 @@ namespace GameEngine.Tests
         [Fact]
         public void CreateBossEnemy()
         {
-            // Assert
+            // Arrange
             EnemyFactory sut = new EnemyFactory();
 
             // Act
@@ -36,7 +36,7 @@ namespace GameEngine.Tests
         [Fact]
         public void CreateBossEnemy_CastReturnedTypeExample()
         {
-            // Assert
+            // Arrange
             EnemyFactory sut = new EnemyFactory();
 
             // Act
@@ -51,7 +51,7 @@ namespace GameEngine.Tests
         [Fact]
         public void CreateBossEnemy_AssertAssignableTypes()
         {
-            // Assert
+            // Arrange
             EnemyFactory sut = new EnemyFactory();
 
             // Act
@@ -59,6 +59,21 @@ namespace GameEngine.Tests
 
             // Assert
             Assert.IsAssignableFrom<Enemy>(enemy);
+        }
+
+        // Enemy factory create two types of enemy 
+        [Fact]
+        public void CreateSeparateInstances()
+        {
+            // Arrange
+            EnemyFactory sut = new EnemyFactory();
+
+            // Act
+            Enemy enemy1 = sut.Create("Zombie");
+            Enemy enemy2 = sut.Create("Zombie");
+
+            // Assert 
+            Assert.NotSame(enemy1, enemy2);
         }
     }
 }
