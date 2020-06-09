@@ -126,5 +126,18 @@ namespace GameEngine.Tests
             // OR
             Assert.InRange<int>(sut.Health, 101, 200);
         }
+
+        [Fact]
+        public void NickNameByDefaultIsNull()
+        {
+            // Arrange
+            PlayerCharacter sut = new PlayerCharacter();
+
+            // Act
+
+            // Assert
+            Assert.Null(sut.Nickname);
+
+        }
     }
 }
