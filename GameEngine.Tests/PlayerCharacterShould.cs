@@ -8,8 +8,13 @@ namespace GameEngine.Tests
         [Fact]
         public void BeInexperincedWehenNew()
         {
+            // Arrange
             PlayerCharacter sut = new PlayerCharacter();
 
+            // Act
+
+            // Assert
+            Assert.True(sut.IsNoob);
 
         }
     }
