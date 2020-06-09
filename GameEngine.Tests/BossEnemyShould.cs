@@ -12,7 +12,7 @@ namespace GameEngine.Tests
         {
             BossEnemy sut = new BossEnemy();
 
-            Assert.Equal(166.667, sut.SpecialPowerUses, 3);
+            Assert.Equal(166.667, sut.TotalSpecialAttackPower, 3);
         }
     }
 }
