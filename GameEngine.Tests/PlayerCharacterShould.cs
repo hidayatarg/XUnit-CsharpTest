@@ -193,5 +193,7 @@ namespace GameEngine.Tests
             // Assert
             Assert.All(sut.Weapons, weapon => Assert.False(string.IsNullOrWhiteSpace(weapon)));
         }
+
+
     }
 }
