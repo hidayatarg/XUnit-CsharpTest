@@ -5,16 +5,23 @@ namespace GameEngine.Tests
 {
     public class PlayerCharacterShould
     {
+        private readonly PlayerCharacter _sut;
+
+        public PlayerCharacterShould()
+        {
+            _sut = new PlayerCharacter();
+        }
+
         [Fact]
         public void BeInexperincedWehenNew()
         {
             // Arrange
-            PlayerCharacter sut = new PlayerCharacter();
+            //PlayerCharacter sut = new PlayerCharacter();
 
             // Act
 
             // Assert
-            Assert.True(sut.IsNoob);
+            Assert.True(_sut.IsNoob);
         }
 
         [Fact]
@@ -24,11 +31,11 @@ namespace GameEngine.Tests
             PlayerCharacter sut = new PlayerCharacter();
 
             // Act
-            sut.FirstName = "Hidayat";
-            sut.LastName = "Arghandabi";
+            _sut.FirstName = "Hidayat";
+            _sut.LastName = "Arghandabi";
 
             // Assert
-            Assert.Equal("Hidayat Arghandabi", sut.FullName);
+            Assert.Equal("Hidayat Arghandabi", _sut.FullName);
         }
 
         [Fact]
