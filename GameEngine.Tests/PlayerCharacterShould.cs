@@ -201,6 +201,29 @@ namespace GameEngine.Tests
             Assert.All(sut.Weapons, weapon => Assert.False(string.IsNullOrWhiteSpace(weapon)));
         }
 
+        [Fact]
+        public void TakeMediumDamage()
+        {
+            _sut.TakeDamage(50);
+            Assert.Equal(50, _sut.Health);
+        }
 
+        [Fact]
+        public void HaveMinimumHealth()
+        {
+            _sut.TakeDamage(101);
+            Assert.Equal(1, _sut.Health);
+        }
+
+        [Theory]
+        [InlineData(0, 100)]
+        [InlineData(1, 99)]
+        [InlineData(50, 50)]
+        [InlineData(101, 1)]
+        public void TakeDamage(int damage, int expectedHealth)
+        {
+            _sut.TakeDamage(damage);
+            Assert.Equal(expectedHealth, _sut.Health);
+        }
     }
 }
